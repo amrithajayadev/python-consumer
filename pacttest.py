@@ -11,14 +11,14 @@ from client import get_inventory_details, save_inventory_details
 pact = Consumer('consumer').has_pact_with(Provider('python-producer'), pact_dir='./pacts')
 pact.start_service()
 atexit.register(pact.stop_service)
-
-broker_url = 'http://ciqpact.cec.lab.emc.com:8500/pacts/provider/{provider}/consumer/{consumer}/version/{consumerApplicationVersion}'.format(
+host = 'https://yourpactbroker.domain.com:8443'
+broker_url = '{host}/pacts/provider/{provider}/consumer/{consumer}/version/{consumerApplicationVersion}'.format(host=host,
     provider='python-producer', consumer='consumer', consumerApplicationVersion='1.0.0')
 
 
 def _publish_to_broker(pactfile):
     headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
-    resp = requests.put(broker_url, data=open(pactfile, 'rb'), headers=headers, auth=HTTPBasicAuth('admin', 'admin'), verify=False)
+    resp = requests.put(broker_url, data=open(pactfile, 'rb'), headers=headers, auth=HTTPBasicAuth('uname', 'password'), verify=False)
     if resp.status_code == http.HTTPStatus.OK:
         print('Template has been published.')
     else:
