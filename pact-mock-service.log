@@ -1,0 +1,113 @@
+I, [2020-06-10T12:54:58.422281 #36284]  INFO -- : Cleared interactions
+I, [2020-06-10T12:54:58.445145 #36284]  INFO -- : Registered expected interaction GET /api/inventory
+D, [2020-06-10T12:54:58.446141 #36284] DEBUG -- : {
+  "description": "a request to get inventory",
+  "providerState": "inventory exists",
+  "request": {
+    "method": "get",
+    "path": "/api/inventory"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "productName": "Laptops",
+      "locationName": "Bangalore",
+      "quantity": 1000
+    }
+  },
+  "metadata": null
+}
+I, [2020-06-10T12:54:58.468098 #36284]  INFO -- : Received request GET /api/inventory
+D, [2020-06-10T12:54:58.469081 #36284] DEBUG -- : {
+  "path": "/api/inventory",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.23.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2020-06-10T12:54:58.470116 #36284]  INFO -- : Found matching response for GET /api/inventory
+D, [2020-06-10T12:54:58.471080 #36284] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "productName": "Laptops",
+    "locationName": "Bangalore",
+    "quantity": 1000
+  }
+}
+I, [2020-06-10T12:54:58.490617 #36284]  INFO -- : Verifying - interactions matched
+I, [2020-06-10T12:54:58.513665 #36284]  INFO -- : Writing pact for python-producer to ./pacts/consumer-python-producer.json
+I, [2020-06-10T12:55:00.209497 #36284]  INFO -- : Cleared interactions
+I, [2020-06-10T12:55:00.254293 #36284]  INFO -- : Registered expected interaction POST /api/inventory
+D, [2020-06-10T12:55:00.256465 #36284] DEBUG -- : {
+  "description": "a request to save inventory",
+  "providerState": "create inventory",
+  "request": {
+    "method": "post",
+    "path": "/api/inventory",
+    "headers": {
+      "Content-type": "application/json"
+    },
+    "body": {
+      "productName": "Laptops",
+      "locationName": "Bangalore",
+      "quantity": 1000
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-type": "application/json"
+    },
+    "body": {
+      "productName": "Laptops",
+      "locationName": "Bangalore",
+      "quantity": 1000
+    }
+  },
+  "metadata": null
+}
+I, [2020-06-10T12:55:00.288380 #36284]  INFO -- : Received request POST /api/inventory
+D, [2020-06-10T12:55:00.288380 #36284] DEBUG -- : {
+  "path": "/api/inventory",
+  "query": "",
+  "method": "post",
+  "body": {
+    "productName": "Laptops",
+    "locationName": "Bangalore",
+    "quantity": 1000
+  },
+  "headers": {
+    "Content-Length": "73",
+    "Content-Type": "application/json",
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.23.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2020-06-10T12:55:00.290503 #36284]  INFO -- : Found matching response for POST /api/inventory
+D, [2020-06-10T12:55:00.291376 #36284] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-type": "application/json"
+  },
+  "body": {
+    "productName": "Laptops",
+    "locationName": "Bangalore",
+    "quantity": 1000
+  }
+}
+I, [2020-06-10T12:55:00.321301 #36284]  INFO -- : Verifying - interactions matched
+I, [2020-06-10T12:55:00.357281 #36284]  INFO -- : Writing pact for python-producer to ./pacts/consumer-python-producer.json

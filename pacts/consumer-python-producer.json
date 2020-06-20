@@ -1,0 +1,60 @@
+{
+  "consumer": {
+    "name": "consumer"
+  },
+  "provider": {
+    "name": "python-producer"
+  },
+  "interactions": [
+    {
+      "description": "a request to get inventory",
+      "providerState": "inventory exists",
+      "request": {
+        "method": "get",
+        "path": "/api/inventory"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "productName": "Laptops",
+          "locationName": "Bangalore",
+          "quantity": 1000
+        }
+      }
+    },
+    {
+      "description": "a request to save inventory",
+      "providerState": "create inventory",
+      "request": {
+        "method": "post",
+        "path": "/api/inventory",
+        "headers": {
+          "Content-type": "application/json"
+        },
+        "body": {
+          "productName": "Laptops",
+          "locationName": "Bangalore",
+          "quantity": 1000
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-type": "application/json"
+        },
+        "body": {
+          "productName": "Laptops",
+          "locationName": "Bangalore",
+          "quantity": 1000
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
